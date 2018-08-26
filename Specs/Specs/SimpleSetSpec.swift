@@ -2,8 +2,8 @@ import XCTest
 
 @testable import ArePeeEye
 
-// Note: For this exercise, we are going to prentend that Swift arrays are dumb
-// We can only access and remove elements using the index subscript.
+// Note: For this exercise, we are going to prentend that Swift arrays are dumb.  They have an initial capacity
+// and can only access and remove elements using the index subscript.
 
 class SimpleSetSpec: XCTestCase {
     var empty: SimpleSet!
@@ -63,9 +63,18 @@ class SimpleSetSpec: XCTestCase {
         XCTAssertFalse(set.contains(1))
     }
     
-    func testIgnoreDuplicates() {
+    func testIgnoresDuplicates() {
         one.add(1)
         
         XCTAssertEqual(one.size(), 1)
+    }
+    
+    func testGrows() {
+        var set = SimpleSet(capacity: 1)
+        
+        set.add(1)
+        set.add(2)
+        
+        XCTAssertEqual(set.size(), 2)
     }
 }

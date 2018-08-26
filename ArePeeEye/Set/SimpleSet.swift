@@ -2,7 +2,15 @@ import Foundation
 
 struct SimpleSet {
     private var internalSize = 0
-    private var elements: [Int] = Array(repeating: -99, count: 5)
+    private var elements: [Int?]
+    
+    init() {
+        self.init(capacity: 5)
+    }
+    
+    init(capacity: Int) {
+        elements = Array(repeating: nil, count: capacity)
+    }
     
     func isEmpty() -> Bool {
         return internalSize == 0
@@ -11,6 +19,13 @@ struct SimpleSet {
     mutating func add(_ value: Int) {
         if contains(value) {
             return
+        }
+        
+        if full() {
+            grow()
+            
+            print("elements")
+            print(elements)
         }
         
         elements[internalSize] = value
@@ -23,7 +38,7 @@ struct SimpleSet {
     }
     
     func contains(_ value: Int) -> Bool {
-        return index(of: value) != -1
+        return index(of: value) != nil
     }
     
     mutating func remove(_ value: Int) {
@@ -33,18 +48,32 @@ struct SimpleSet {
         
         internalSize -= 1
         
-        elements[index(of: value)] = elements[internalSize]
+        elements[index(of: value)!] = elements[internalSize]
         
-        elements[internalSize] = -99
+        elements[internalSize] = nil
     }
-    
-    private func index(of value: Int) -> Int {
+
+    private func index(of value: Int) -> Int? {
         for (index, _) in elements.enumerated() {
             if elements[index] == value {
                 return index
             }
         }
         
-        return -1
+        return nil
+    }
+    
+    private func full() -> Bool {
+        return internalSize == elements.count
+    }
+    
+    private mutating func grow() {
+        var largerElements: [Int?] = Array(repeating: nil, count: elements.count * 2)
+        
+        for (index, element) in elements.enumerated() {
+            largerElements[index] = element
+        }
+        
+        elements = largerElements
     }
 }
