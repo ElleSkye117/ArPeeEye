@@ -16,3 +16,5 @@ The Are Pee Eye can verify a few points:
 4. Can the candidate think quickly?
 5. Does the candidate pickup patterns?
 6. Can the candidate think about writing `YAGNI` code?
+7. Does the candidate understand the difference between higher level vs. lower level implemenations?
+8. Can the candidate think abstractly?

@@ -404,4 +404,97 @@ mutating func add(_ value: Int) {
 }
 ```
 
-### TODO: FINISH UP `isFull()` and `grow()`
+__Now we are going to handle the case where we need to grow our `elements` array beyond it's initial capacity.  Let's write test that allows us to test this effectively.  I'm going to introduce an `init()` method that allows us to set an initial capacity.  Here is the spec:__
+
+```swift
+func testGrows() {
+    var set = SimpleSet(capacity: 1)
+}
+```
+
+__Let's allow this test to drive our implemenation of a new `init()` method.__
+
+```swift
+init() {
+  self.init(capacity: 5)
+}
+
+init(capacity: Int) {
+  elements = Array(repeating: nil, count: capacity)
+}
+```
+
+__As you can see we needed to add a "vanilla" `init()` method since once we implement the new `init(capactity:)` method Swift gets rid of our "freebee" `struct` one.__
+
+### Q. Do we need the construction of the `elements` array at the property level?
+
+* No, because we will always be setup now at the `initMethod()` level.
+
+```swift
+private var internalSize = 0
+private var elements: [Int?]
+```
+
+__Now let's start to build out the actual spec.__
+
+```swift
+func testGrows() {
+  var set = SimpleSet(capacity: 1)
+
+  set.add(1)
+  set.add(2)
+
+  XCTAssertEqual(set.size(), 2)
+}
+```
+
+### Q. What is going to happen when we attempt to add the second element in the array?
+
+* We will crash because we will be going out of range of the `elements` array
+
+__What we need is a check in the `add()` method that will see if the `elements` array is full, and then expand it if it is.__
+
+### Q. Do we want the check before or after the contains check statement in the `add()` method?
+
+* After the contains check so that way we don't expand the array unnecessarily if we already have the item being added.
+
+```swift
+mutating func add(_ value: Int) {
+  if contains(value) {
+    return
+  }
+
+  if isElementsArrayFull() {
+    expandElementsArray()
+  }
+
+  ...
+```
+
+### Q. How do we determine if we are full?
+
+* We check to see if our `internalSize` property is equal to `elements.count`.
+
+```swift
+private func isElementsArrayFull() -> Bool {
+  return internalSize == elements.count
+}
+```
+
+### How do we expand the `elements` array?
+
+* We can expand it by some arbitrary value (doubling it is good enough), and then copy the elements from the current `elements` array into the expanded array and then set the current `elements` array to the newly expanded array.
+
+```swift
+private mutating func expandElementsArray() {
+  var largerElements: [Int?] = Array(repeating: nil, count: elements.count * 2)
+
+  for (index, element) in elements.enumerated() {
+    largerElements[index] = element
+  }
+
+  elements = largerElements
+}
+```
+
+### Q. Do you see the value of this exercise?  Is this something you want to be doing full time?

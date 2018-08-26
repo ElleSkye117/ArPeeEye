@@ -21,8 +21,8 @@ struct SimpleSet {
             return
         }
         
-        if isFull() {
-            grow()
+        if isElementsArrayFull() {
+            expandElementsArray()
         }
         
         elements[internalSize] = value
@@ -60,11 +60,11 @@ struct SimpleSet {
         return nil
     }
     
-    private func isFull() -> Bool {
+    private func isElementsArrayFull() -> Bool {
         return internalSize == elements.count
     }
     
-    private mutating func grow() {
+    private mutating func expandElementsArray() {
         var largerElements: [Int?] = Array(repeating: nil, count: elements.count * 2)
         
         for (index, element) in elements.enumerated() {
