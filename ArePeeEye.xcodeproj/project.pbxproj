@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		94E113982132E52700B4029F /* ArePeeEye.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E113962132E52700B4029F /* ArePeeEye.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94E113A82132E76100B4029F /* ArePeeEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E113932132E52700B4029F /* ArePeeEye.framework */; };
-		94E113B02132E7B800B4029F /* SetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113AF2132E7B800B4029F /* SetSpec.swift */; };
-		94E113B32132E83500B4029F /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113B22132E83500B4029F /* Set.swift */; };
+		94E113B02132E7B800B4029F /* SimpleSetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113AF2132E7B800B4029F /* SimpleSetSpec.swift */; };
+		94E113B32132E83500B4029F /* SimpleSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113B22132E83500B4029F /* SimpleSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +29,8 @@
 		94E113972132E52700B4029F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94E113A32132E76100B4029F /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E113A72132E76100B4029F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94E113AF2132E7B800B4029F /* SetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSpec.swift; sourceTree = "<group>"; };
-		94E113B22132E83500B4029F /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		94E113AF2132E7B800B4029F /* SimpleSetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSetSpec.swift; sourceTree = "<group>"; };
+		94E113B22132E83500B4029F /* SimpleSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +82,7 @@
 		94E1139E2132E74F00B4029F /* Set */ = {
 			isa = PBXGroup;
 			children = (
-				94E113B22132E83500B4029F /* Set.swift */,
+				94E113B22132E83500B4029F /* SimpleSet.swift */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 		94E113AE2132E77200B4029F /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				94E113AF2132E7B800B4029F /* SetSpec.swift */,
+				94E113AF2132E7B800B4029F /* SimpleSetSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E113B32132E83500B4029F /* Set.swift in Sources */,
+				94E113B32132E83500B4029F /* SimpleSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E113B02132E7B800B4029F /* SetSpec.swift in Sources */,
+				94E113B02132E7B800B4029F /* SimpleSetSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
