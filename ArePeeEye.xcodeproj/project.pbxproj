@@ -8,12 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		94E113982132E52700B4029F /* ArePeeEye.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E113962132E52700B4029F /* ArePeeEye.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94E113A82132E76100B4029F /* ArePeeEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E113932132E52700B4029F /* ArePeeEye.framework */; };
+		94E113B02132E7B800B4029F /* SetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113AF2132E7B800B4029F /* SetSpec.swift */; };
+		94E113B32132E83500B4029F /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E113B22132E83500B4029F /* Set.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94E113A92132E76100B4029F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94E1138A2132E52700B4029F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94E113922132E52700B4029F;
+			remoteInfo = ArePeeEye;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		94E113932132E52700B4029F /* ArePeeEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArePeeEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E113962132E52700B4029F /* ArePeeEye.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArePeeEye.h; sourceTree = "<group>"; };
 		94E113972132E52700B4029F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94E113A32132E76100B4029F /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E113A72132E76100B4029F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94E113AF2132E7B800B4029F /* SetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSpec.swift; sourceTree = "<group>"; };
+		94E113B22132E83500B4029F /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +41,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		94E113A02132E76100B4029F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94E113A82132E76100B4029F /* ArePeeEye.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				94E113952132E52700B4029F /* ArePeeEye */,
+				94E113A42132E76100B4029F /* Specs */,
 				94E113942132E52700B4029F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,11 +65,46 @@
 			isa = PBXGroup;
 			children = (
 				94E113932132E52700B4029F /* ArePeeEye.framework */,
+				94E113A32132E76100B4029F /* Specs.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 		94E113952132E52700B4029F /* ArePeeEye */ = {
+			isa = PBXGroup;
+			children = (
+				94E113B12132E7EC00B4029F /* ArePeeEye */,
+				94E1139E2132E74F00B4029F /* Set */,
+			);
+			path = ArePeeEye;
+			sourceTree = "<group>";
+		};
+		94E1139E2132E74F00B4029F /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				94E113B22132E83500B4029F /* Set.swift */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		94E113A42132E76100B4029F /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				94E113AE2132E77200B4029F /* Specs */,
+				94E113A72132E76100B4029F /* Info.plist */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		94E113AE2132E77200B4029F /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				94E113AF2132E7B800B4029F /* SetSpec.swift */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		94E113B12132E7EC00B4029F /* ArePeeEye */ = {
 			isa = PBXGroup;
 			children = (
 				94E113962132E52700B4029F /* ArePeeEye.h */,
@@ -84,16 +145,39 @@
 			productReference = 94E113932132E52700B4029F /* ArePeeEye.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		94E113A22132E76100B4029F /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94E113AB2132E76100B4029F /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				94E1139F2132E76100B4029F /* Sources */,
+				94E113A02132E76100B4029F /* Frameworks */,
+				94E113A12132E76100B4029F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94E113AA2132E76100B4029F /* PBXTargetDependency */,
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = 94E113A32132E76100B4029F /* Specs.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		94E1138A2132E52700B4029F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = none;
 				TargetAttributes = {
 					94E113922132E52700B4029F = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					94E113A22132E76100B4029F = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -111,12 +195,20 @@
 			projectRoot = "";
 			targets = (
 				94E113922132E52700B4029F /* ArePeeEye */,
+				94E113A22132E76100B4029F /* Specs */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		94E113912132E52700B4029F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94E113A12132E76100B4029F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,10 +222,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E113B32132E83500B4029F /* Set.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94E1139F2132E76100B4029F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94E113B02132E7B800B4029F /* SetSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94E113AA2132E76100B4029F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94E113922132E52700B4029F /* ArePeeEye */;
+			targetProxy = 94E113A92132E76100B4029F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		94E113992132E52700B4029F /* Debug */ = {
@@ -259,6 +368,7 @@
 		94E1139C2132E52700B4029F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -266,7 +376,35 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ArePeeEye/Info.plist;
+				INFOPLIST_FILE = ArePeeEye/ArePeeEye/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = none.ArePeeEye;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94E1139D2132E52700B4029F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ArePeeEye/ArePeeEye/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -280,29 +418,43 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = Release;
 		};
-		94E1139D2132E52700B4029F /* Release */ = {
+		94E113AC2132E76100B4029F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ArePeeEye/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = none.ArePeeEye;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = none.Specs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94E113AD2132E76100B4029F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Specs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = none.Specs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,6 +477,15 @@
 			buildConfigurations = (
 				94E1139C2132E52700B4029F /* Debug */,
 				94E1139D2132E52700B4029F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94E113AB2132E76100B4029F /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94E113AC2132E76100B4029F /* Debug */,
+				94E113AD2132E76100B4029F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
