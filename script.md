@@ -1,4 +1,4 @@
-# Swift RPI Script
+# Swift ArePeeEye Script
 
 ### We are going to build a `SimpleSet` in Swift using TDD.  TDD is where we write tests first, and then implemented the most basic amount of code to the the tests passing.  Once the tests pass, we look for pieces of code we can refactor.  This is also referred to as Red-Green-Refactor.  Ok let’s begin:
 
@@ -6,9 +6,9 @@
 
 * A set is a collection that has unique objects contained that are unordered.
 
-As you can see I created a test class and file for our `SimpleSet`.
+__As you can see I created a test class and file for our `SimpleSet`.__
 
-To get started let’s begin with implementing the `isEmpty()` method.
+__To get started let’s begin with implementing the `isEmpty()` method.__
 
 ```swift
 func testIsEmpty() {
@@ -17,7 +17,7 @@ func testIsEmpty() {
 }
 ```
 
-Since this won’t build due to the lack of the `isEmpty()` method, let’s create that method:
+__Since this won’t build due to the lack of the `isEmpty()` method, let’s create that method:__
 
 ```swift
 func isEmpty() {
@@ -25,13 +25,13 @@ func isEmpty() {
 }
 ```
 
-As we can see the test fails.
+__As we can see the test fails.__
 
 ### Q. What is the most basic thing we can do to make this test pass?
 
 * Return `true` in `isEmpty()` method
 
-Now when use a `SimpleSet`, we should test empty sets, and sets with objects in them.  Let’s create some more sets to tests:
+__Now when use a `SimpleSet`, we should test empty sets, and sets with objects in them.  Let’s create some more sets to tests:__
 
 ```swift
 func testIsEmpty() {
@@ -50,7 +50,7 @@ func testIsEmpty() {
 }
 ````
 
-This test drives us to implement an add method in order to build:
+__This test drives us to implement an add method in order to build:__
 
 ```swift
 func add(_ value: Int) {
@@ -58,7 +58,7 @@ func add(_ value: Int) {
 }
 ```
 
-We will leave the method blank for now and run the tests and they fail.
+__We will leave the method blank for now and run the tests and they fail.__
 
 ### Q. What is the simplest thing we can do to make the tests pass?
 
@@ -81,7 +81,7 @@ func add(_ value: Int) {
 
 ```
 
-Next we will test size.  Let’s copy and paste the tests from the `isEmpty()` tests.
+__Next we will test size.  Let’s copy and paste the tests from the `isEmpty()` tests.__
 
 ```swift
 func testSize() {
@@ -106,7 +106,7 @@ func testSize() {
 * To be more descriptive, let’s make it `many.size() > 1`, instead of testing `many.size() == 2`
 * `XCTAssertTrue(many.size() > 1)`;
 
-Let’s add the method, and watch the tests fail:
+__Let’s add the method, and watch the tests fail:__
 
 ```swift
 func size() -> Int {
@@ -149,7 +149,7 @@ func add(_ value: Int) {
 }
 ```
 
-Still green, so let’s refactor the tests, as we can create all our objects for each test using `setUp()`:
+__Still green, so let’s refactor the tests, as we can create all our objects for each test using `setUp()`:__
 
 ```swift
 class SimpleSetSpec: XCTestCase {
@@ -188,7 +188,7 @@ class SimpleSetSpec: XCTestCase {
 }
 ```
 
-Let’s test contains. Lets just assert the `empty/one/many` sets we created to see if they contain the objects we added.
+__Let’s test contains. Lets just assert the `empty/one/many` sets we created to see if they contain the objects we added.__
 
 ```swift
 func testContains() {
@@ -203,7 +203,7 @@ func testContains() {
 }
 ```
 
-Then we just create a default `contains()` method that returns `true`
+__Then we just create a default `contains()` method that returns `true`__
 
 ```swift
 func contains(_ value: Int) -> Bool {
@@ -217,7 +217,7 @@ func contains(_ value: Int) -> Bool {
 * We will pretend that the Swift arrays are dumb and don't have any re-sizing, fancy collection methods.
 * Since we don’t care about expansion at this moment, use a small finite size
 
-Let’s create an array that will hold 5 objects for now:
+__Let’s create an array that will hold 5 objects for now:__
 
 ```swift
 private var internalSize = 0
@@ -241,7 +241,7 @@ mutating func contains(_ value: Int) -> Bool {
 }
 ```
 
-Remove is next.
+__Remove is next.__
 
 ### Q. After looking at the variable names for the previous tests, do you see a problem with using the same names for the remove tests?
 
@@ -302,7 +302,7 @@ mutating func remove(_ value: Int) {
 }
 ```
 
-Now we are green.
+__Now we are green.__
 
 ### Q. Is there anything you think we can refactor?
 
@@ -373,7 +373,7 @@ Con - We are looping twice, `2N` instead of `N`
 * Since we have no requirements about speed, we don’t care
 * Pre-optimization can waste time
 
-Let’s test duplicates
+__Let’s test duplicates__
 
 ### Q. What kind of assertions can we do to test that our sets don’t add duplicates?
 
