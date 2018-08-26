@@ -21,11 +21,8 @@ struct SimpleSet {
             return
         }
         
-        if full() {
+        if isFull() {
             grow()
-            
-            print("elements")
-            print(elements)
         }
         
         elements[internalSize] = value
@@ -63,7 +60,7 @@ struct SimpleSet {
         return nil
     }
     
-    private func full() -> Bool {
+    private func isFull() -> Bool {
         return internalSize == elements.count
     }
     
