@@ -498,3 +498,5 @@ private mutating func expandElementsArray() {
 ```
 
 ### Q. Do you see the value of this exercise?  Is this something you want to be doing full time?
+
+* Of course =)
